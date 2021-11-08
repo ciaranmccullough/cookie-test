@@ -10,23 +10,8 @@
       src="//consent.trustarc.com/notice?domain=ea.com&c=teconsent&js=nj&noticeType=bb&text=true&gtm=1"
       crossorigin
     ></script>
-    <!-- Google Tag Manager -->
+
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-TFTCVRC");
-    </script>
-    <!-- End Google Tag Manager -->
-  </head>
-  <body style="height: 100vh; width: 100vw; margin: 0">
-    <!-- <script>
       var __dispatched__ = {}; //Map of previously dispatched preference levels
       /*
       First step is to register with the CM API to receive callbacks when a preference update
@@ -61,7 +46,8 @@
             (d = JSON.parse(e.data)) &&
             (d = d.PrivacyManagerAPI) &&
             d.capabilities &&
-            d.action == "getConsentDecision"
+            d.action == "getConsentDecision" &&
+            console.log("firing!!!")
           ) {
             var newDecision = self.PrivacyManagerAPI.callApi(
               "getGDPRConsentDecision",
@@ -80,7 +66,24 @@
           /** not a cm api message **/
         }
       });
-    </script> -->
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TFTCVRC");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="height: 100vh; width: 100vw; margin: 0">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
