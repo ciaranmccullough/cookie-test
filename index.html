@@ -11,7 +11,7 @@
       crossorigin
     ></script>
 
-    <script>
+    <script async>
       var __dispatched__ = {}; //Map of previously dispatched preference levels
       /*
       First step is to register with the CM API to receive callbacks when a preference update
@@ -47,7 +47,7 @@
             (d = d.PrivacyManagerAPI) &&
             d.capabilities &&
             d.action == "getConsentDecision" &&
-            console.log("firing!!!")
+            console.log("event listener firing!!!")
           ) {
             var newDecision = self.PrivacyManagerAPI.callApi(
               "getGDPRConsentDecision",
@@ -69,10 +69,11 @@
     </script>
 
     <!-- Google Tag Manager -->
-    <script>
+    <script defer>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        console.log("ANALYTICS FIRING!");
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
           dl = l != "dataLayer" ? "&l=" + l : "";
