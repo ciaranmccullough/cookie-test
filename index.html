@@ -17,6 +17,7 @@
       occurs. You must wait for the CM API (PrivacyManagerAPI object) to exist on the page before
       registering.
       */
+      console.log("EVENT LISTENER!");
       var __i__ =
         self.postMessage &&
         setInterval(function () {
@@ -45,8 +46,7 @@
             (d = JSON.parse(e.data)) &&
             (d = d.PrivacyManagerAPI) &&
             d.capabilities &&
-            d.action == "getConsentDecision" &&
-            console.log("event listener firing!!!")
+            d.action == "getConsentDecision"
           ) {
             var newDecision = self.PrivacyManagerAPI.callApi(
               "getGDPRConsentDecision",
@@ -85,7 +85,7 @@
   </head>
   <body style="height: 100vh; width: 100vw; margin: 0">
     <!-- Google Tag Manager (noscript) -->
-    <noscript defer
+    <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-TFTCVRC"
         height="0"
